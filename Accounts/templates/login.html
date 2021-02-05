@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+	<div class="text-center mt-5">
+		<h3 class="text-info font"><b>Login Form</b></h3><br>
+		<p>{%if form.non_field_errors%}
+			{% for error in form.non_field_errors %}
+		<small class="text-danger font"><b>{{error}}</b></small>
+			{%endfor%}
+		</ul>
+	{%endif%}</p>
+	<form method="POST" novalidate="">
+		{%csrf_token%}
+		<span class="text-danger font"><b>{{form.username.errors}}</b></span>
+		<span class="font"><b>{{form.username.label}}</b></span>{{form.username}} <br><br>
+		<span class="text-danger font"><b>{{form.password.errors}}</b></span>
+		<span class="font"><b>{{form.password.label}}</b></span>{{form.password}}<br><br>
+		<button class="font btn btn-info"><b>Login</b></button>
+		<a class="btn btn-primary info" href="/register/">Register</a>
+
+	</form>
+		
+	</div>
+
+
+</body>
+</html>

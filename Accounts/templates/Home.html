@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+	<div>
+		{% if user.is_authenticated %}
+		<h1 class="text-success font"><b>you are successfully logged in</b></h1>
+		<a class="btn btn-danger font" href='/logout/'><b>Logout</b></a>
+		{%else%}
+		<h1 class="text-success font"><b>you are an unauthorized user</b></h1>
+		<a class="btn btn-danger font" href="/login/"><b>login</b></a>
+
+		{%endif%}
+
+	</div>
+
+</body>
+</html>
